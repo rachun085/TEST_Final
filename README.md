@@ -7,3 +7,6 @@
     1.<uses-permission android:name="android.permission.INTERNET" />
     
 # แก้ IP+File PHP ตรง URL ตามเครื่องตัวเอง
+    1. Windows + R
+    2. cmd
+    3. ipconfig
