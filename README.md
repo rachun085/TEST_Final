@@ -5,3 +5,5 @@
 
 # แล้วเพิ่มโค้ดนี้เข้าไปใน AndroidManifest.xml
     1.<uses-permission android:name="android.permission.INTERNET" />
+    
+# แก้ IP+File PHP ตรง URL ตามเครื่องตัวเอง
