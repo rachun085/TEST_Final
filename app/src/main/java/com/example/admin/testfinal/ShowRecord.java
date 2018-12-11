@@ -23,10 +23,10 @@ import org.json.JSONObject;
 
 public class ShowRecord extends AppCompatActivity {
 
-    TextView showid,showname,showsurname,showaddr;
+    TextView showid,showname,showsurname,showaddr,showgender,showsection;
     Button butback;
-    String id,name,surname,address;
-    String URL2="http://192.168.56.1/testfinal/query.php";
+    String id,name,surname,address,gender,section;
+    String URL2="http://192.168.1.168/testfinal/query.php";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,6 +38,8 @@ public class ShowRecord extends AppCompatActivity {
         showsurname = findViewById(R.id.shsurname);
         showaddr = findViewById(R.id.shaddr);
         butback = findViewById(R.id.butback);
+        showsection = findViewById(R.id.shsection);
+        showgender = findViewById(R.id.shgender);
 
         butback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,12 +80,16 @@ public class ShowRecord extends AppCompatActivity {
                 name = collectData.getString("name");
                 surname = collectData.getString("surname");
                 address = collectData.getString("address");
+                section = collectData.getString("section");
+                gender = collectData.getString("gender");
 
 
                 showid.setText(id);
                 showname.setText(name);
                 showsurname.setText(surname);
                 showaddr.setText(address);
+                showsection.setText(section);
+                showgender.setText(gender);
             }
 
 

@@ -39,19 +39,52 @@
         android:id="@+id/edtaddr"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/edtid"
+        android:layout_marginTop="263dp"
+        android:hint="ADDRESS" />
+
+    <Spinner
+        android:id="@+id/spnsection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/edtid"
-        android:layout_marginBottom="195dp"
-        android:hint="ADDRESS" />
+        android:layout_marginBottom="233dp" />
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/edtid"
+        android:layout_marginBottom="169dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/inputMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/inputFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:textSize="20sp" />
+
+    </RadioGroup>
+
 
     <Button
         android:id="@+id/buttonsave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="107dp"
-        android:layout_marginStart="115dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="84dp"
         android:text="บันทึกข้อมูล" />
 
 </RelativeLayout>

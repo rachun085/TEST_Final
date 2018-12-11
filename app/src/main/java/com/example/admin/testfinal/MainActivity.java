@@ -5,11 +5,17 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -20,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
     EditText edtid, edtname, edtsurname, edtaddr;
     Button button;
-    String URL = "http://192.168.56.1/testfinal/insert.php";
+    RadioGroup radioGroup;
+    RadioButton radioButton;
+    Spinner spnsection;
+    String URL = "http://192.168.1.168/testfinal/insert.php";
 
 
     @Override
@@ -33,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
         edtsurname = findViewById(R.id.edtsurname);
         edtaddr = findViewById(R.id.edtaddr);
         button = findViewById(R.id.buttonsave);
+        spnsection = findViewById(R.id.spnsection);
+        radioGroup = findViewById(R.id.radio);
+
+        String[] gender = getResources().getStringArray(R.array.section);
+        ArrayAdapter<String> adaptergender = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, gender);
+        spnsection.setAdapter(adaptergender);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,12 +61,17 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... strings) {
             try {
+                int selectedgender = radioGroup.getCheckedRadioButtonId();
+                radioButton = findViewById(selectedgender);
+
                 OkHttpClient _okHttpClient = new OkHttpClient();
                 RequestBody _requestBody = new FormBody.Builder()
                         .add("id", edtid.getText().toString())
                         .add("name", edtname.getText().toString())
                         .add("surname", edtsurname.getText().toString())
                         .add("address", edtaddr.getText().toString())
+                        .add("section", spnsection.getSelectedItem().toString())
+                        .add("gender", radioButton.getText().toString())
                         .build();
 
                 Request _request = new Request.Builder().url(strings[0]).post(_requestBody).build();

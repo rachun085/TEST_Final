@@ -10,7 +10,9 @@
                     "name" => $row["name"],
                     "surname" => $row["surname"],
                     "surname" => $row["surname"],
-                    "address" => $row["address"]));
+                    "address" => $row["address"],
+                    "section" => $row["section"],
+                    "gender" => $row["gender"]));
     }
 
     print json_encode(array("result" => $result));

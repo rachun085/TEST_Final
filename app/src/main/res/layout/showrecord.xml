@@ -33,10 +33,28 @@
         android:id="@+id/shaddr"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="255dp"
+        android:text="d" />
+
+    <TextView
+        android:id="@+id/shgender"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="204dp"
-        android:text="d" />
+        android:layout_marginBottom="177dp"
+        android:text="g" />
+
+    <TextView
+        android:id="@+id/shsection"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="231dp"
+        android:text="e" />
 
     <Button
         android:id="@+id/butback"
